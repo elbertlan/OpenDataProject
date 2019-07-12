@@ -1,0 +1,19 @@
+{
+    "name":"擁抱田園風光",
+    "short_name":"田園風光",
+    "start_url": "./index.php",
+    "display": "standalone",
+    "background_color":"#28a745",
+    "icons":[
+        {
+            "src":"./icon/traveller512.png",
+            "sizes":"512x512",
+            "type":"image/png"
+        },
+        {
+            "src":"./icon/traveller192.png",
+            "sizes":"192x192",
+            "type":"image/png"
+        }
+    ]
+}

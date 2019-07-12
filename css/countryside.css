@@ -1,0 +1,65 @@
+@media (max-width:768px){
+
+    .table-hide{
+        display:none;
+    }
+    .table-rwd tr{
+        display:block;
+    }
+
+    .info{
+        display:none;
+    }
+
+    .table-rwd td{
+        display:block;
+        border:0;
+    }
+
+    .location{
+        width: 500px;
+    }
+
+    .citylist{
+        clear:both;
+    }
+
+}
+
+
+
+@media (max-width:512px){
+    .table-hide{
+        display:none;
+    }
+    .table-rwd tr{
+        display:block;
+    }
+
+    .info{
+        display:none;
+    }
+
+    .table-rwd td{
+        display:block;
+        border:0;
+    }
+
+
+    .location{
+        width: 320px;
+    }
+    .citylist{
+        clear:both;
+    }
+}
+
+.nav-fz24-mx10{
+    font-size:24px;
+    margin:0 10px;
+}
+
+#content{
+    display:none;
+}
+
