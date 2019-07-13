@@ -16,10 +16,6 @@
         border:0;
     }
 
-    .location{
-        width: 500px;
-    }
-
     .citylist{
         clear:both;
     }
@@ -45,19 +41,14 @@
         border:0;
     }
 
-
-    .location{
-        width: 320px;
-    }
     .citylist{
         clear:both;
     }
+    .citysize{
+        height:200px;
+    }
 }
 
-.nav-fz24-mx10{
-    font-size:24px;
-    margin:0 10px;
-}
 
 #content{
     display:none;

@@ -137,9 +137,9 @@ $vista=json_decode($results,true);
 					<li class="nav-item">
 						<a class="nav-link" href="infolist.php" style="color:yellow;">農村旅遊資訊</a>
 					</li>
-					<!-- <li class="nav-item">
-			<a class="nav-link nav-fz24-mx10" href="#" style="color:yellow;">相片集</a>
-		</li> -->
+					<li class="nav-item">
+						<a class="nav-link" href="statistics.php" style="color:yellow;">統計資料</a>
+					</li>
 				</ul>
 			</div>
 		</div>

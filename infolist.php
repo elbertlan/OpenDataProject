@@ -4,7 +4,7 @@
 
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143261769-2"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143261769-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -13,7 +13,7 @@
         }
         gtag('js', new Date());
 
-        gtag('config', 'UA-143261769-2');
+        gtag('config', 'UA-143261769-1');
 	</script>
 	<!-- end of google Analytic -->
 <meta charset="UTF-8">
@@ -81,9 +81,9 @@
                 <li class="nav-item active">
                     <a class="nav-link text-warning" href="#">農村旅遊資訊<span class="sr-only">(current)</span></a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link nav-fz24-mx10" href="#" style="color:yellow;">相片集</a>
-                </li> -->
+                <li class="nav-item">
+                <a class="nav-link" href="statistics.php" style="color:yellow;">統計資料</a>
+                </li>
             </ul>
         </div>
         </div>
@@ -123,7 +123,7 @@ $vista=json_decode($results,true);
 <!-- content -->
     <div class="container" style="margin-top:74px; margin-bottom:74px;" id="content">
         <div class="col-12">
-            <h1 class="text-center bounceInRight wow">農村旅遊資訊</h1>
+            <h2 class="text-center bounceInRight wow">農村旅遊資訊</h2>
         </div>
         <div class="row">
             <div class="col-12">
@@ -181,7 +181,7 @@ $vista=json_decode($results,true);
                         <tr>
                             <td id="name<?=$k;?>" class="name name<?=$k;?> place<?=$k;?>" style="width:170px;"><?=$v['Name'];?></td>
 
-                            <td id="city<?=$k;?>" class="city city<?=$k;?> place<?=$k;?> style="width:70px;""><?=$v['City'];?></td>
+                            <td id="city<?=$k;?>" class="city city<?=$k;?> place<?=$k;?>" style="width:70px;"><?=$v['City'];?></td>
 
                             <td id="town<?=$k;?>" class="town town<?=$k;?> place<?=$k;?> info" style="width:70px;"><?=$v['Town'];?></td>
 
@@ -250,7 +250,7 @@ $vista=json_decode($results,true);
     </div>
 <!-- end of modal -->
 	<!-- footer -->
-	<div class="container-fluid bg-success fixed-bottom;" id="footer" style="display:none;">
+	<div class="container-fluid bg-success fixed-bottom" id="footer" style="display:none;">
         <div class="row justify-content-center">
             <div class="col-12 text-white text-center">
                 <ul class="nav justify-content-center">
