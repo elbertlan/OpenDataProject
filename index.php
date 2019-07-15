@@ -1,3 +1,16 @@
+<?php
+$dsn="mysql:host=localhost;charset=utf8;dbname=vistafarm";
+$pdo= new PDO($dsn,'root','');
+session_start();
+if(empty($_SESSION['counter'])){
+	global $pdo;
+	$counter=$pdo->query("select * from visitor")->fetchAll();
+	// print_r($counter);
+	$counter[0]['counter']++;
+	$_SESSION['counter']=$counter[0]['counter'];
+	$pdo->exec("update `visitor` set counter= '".$counter[0]['counter']."' where id= '".$counter[0]['id']."'");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -724,9 +737,6 @@ $vista=json_decode($results,true);
 						<a class="nav-link" href="#"><i class="fab fa-instagram"></i></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#"><i class="fab fa-google-plus-square"></i></a>
-					</li>
-					<li class="nav-item">
 						<a class="nav-link" href="#"><i class="fab fa-tripadvisor"></i></i></a>
 					</li>
 					<li class="nav-item">
@@ -736,7 +746,7 @@ $vista=json_decode($results,true);
 				&copy;<script>
 					let d = new Date;
 					document.write(d.getFullYear());
-				</script>泰山網頁設計
+				</script>泰山網頁設計_蘭嵐&nbsp;&nbsp;&nbsp;訪客人數：<?=$_SESSION['counter'];?>
 			</div>
 		</div>
 	</div>
