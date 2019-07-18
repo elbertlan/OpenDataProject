@@ -1,4 +1,3 @@
-
 <?php
 $dsn="mysql:host=localhost;charset=utf8;dbname=vistafarm";
 $pdo= new PDO($dsn,'root','');
@@ -11,8 +10,11 @@ if(empty($_SESSION['counter'])){
 	$_SESSION['counter']=$counter[0]['counter'];
 	$pdo->exec("update `visitor` set counter= '".$counter[0]['counter']."' where id= '".$counter[0]['id']."'");
 }
+
+if(empty($_SESSION['vista'])){
+    header("location:./index.php");
+}
 ?>
-<!-- 擁抱田園風光-農村旅遊資訊,https://data.gov.tw/dataset/13620 -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,6 +81,7 @@ if(empty($_SESSION['counter'])){
 </head>
 
 <body>
+
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-success fixed-top">
         <div class="container">
@@ -107,16 +110,8 @@ if(empty($_SESSION['counter'])){
     <!-- 公開資料索取區 -->
     <?php
 
-$curl=curl_init();
-curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36");
-curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($curl, CURLOPT_URL, "http://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvAttractions.aspx");
-$results = curl_exec($curl);
-curl_close($curl);
+$vista=$_SESSION['vista'];
 
-$vista=json_decode($results,true);
-// print_r($vista);
 ?>
 
 <!-- end of 公開資料索取區 -->
@@ -322,8 +317,8 @@ $vista=json_decode($results,true);
 
         // js for loading
         $(document).on("readystatechange",function(){
-            $("#loading").fadeOut(1500, 0, function(){
-                $("#content,#footer").fadeIn(1000);
+            $("#loading").fadeOut(500, 0, function(){
+                $("#content,#footer").fadeIn(500);
                 new WOW().init()
             });
         })

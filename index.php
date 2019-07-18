@@ -115,8 +115,9 @@ if(empty($_SESSION['counter'])){
 <body>
 
 	<!-- 公開資料索取區 -->
+	<!-- 擁抱田園風光-農村旅遊資訊,https://data.gov.tw/dataset/13620 -->
 	<?php
-
+if(empty($_SESSION['viata'])){
 $curl=curl_init();
 curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36");
 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
@@ -126,7 +127,10 @@ $results = curl_exec($curl);
 curl_close($curl);
 
 $vista=json_decode($results,true);
+
 // print_r($vista);
+$_SESSION['vista']=$vista;
+}
 ?>
 
 	<!-- end of 公開資料索取區 -->
@@ -191,7 +195,7 @@ $vista=json_decode($results,true);
 		c0.382,1.245-0.495,2.367-1.499,3.187c-0.479,0.392-1.063,0.653-1.552,1.034c-3.499,2.724-6.43,2.022-8.241-2.005
 		c-0.687-1.528,0.075-2.493,1.473-2.753C39.642,52.883,41.884,52.737,44.724,52.408z" />
 					</g>
-					<g id="kmcounty" id="kmcounty" class="maparea" data-city="金門縣">
+					<g id="kmcounty" class="maparea" data-city="金門縣">
 						<path class="maparea" fill-rule="evenodd" clip-rule="evenodd" fill="rgba(255,255,255,0.3)" d="M65.817,160.356c-1.822-0.075-2.875-0.919-4.005-1.742
 		c-4.371-3.184-6.609-2.882-10.069,1.215c-1.611,1.908-3.709,3.37-5.606,4.853c-1.687,1.319-4.454-0.028-6.172-1.287
 		c-1.624-1.189-1.622-3.565-0.433-5.12c1.818-2.378,1.745-4.106,0.014-6.625c-1.379-2.007-0.769-4.578,1.552-6.249
@@ -718,8 +722,6 @@ $vista=json_decode($results,true);
 			</div>
 		</div>
 	</div>
-
-
 
 
 	<!-- footer -->
